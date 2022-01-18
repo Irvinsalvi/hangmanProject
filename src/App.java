@@ -5,7 +5,7 @@ public class App {
     {
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Welcome to Hangman!");
+        System.out.println("\nWelcome to Hangman!");
         System.out.print("\nEnter a word to guess: ");
 
         String wordToGuess = input.nextLine();
