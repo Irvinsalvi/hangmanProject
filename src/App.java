@@ -14,20 +14,23 @@ public class App {
         System.out.print("\nEnter a word to guess: ");
 
         wordToGuess = input.nextLine();
-        wordToGuess.toLowerCase();
+        wordToGuess = wordToGuess.toLowerCase();
 
         hiddenWord = new String(new char[wordToGuess.length()]).replace("\0", "_");
 
         while (count > 0 && hiddenWord.contains("_"))
         {
-            System.out.print(hiddenWord);
+            System.out.print(hiddenWord.replaceAll("", " ").trim());
             System.out.print("\t(Lives Left: " + count + ")\n");
             System.out.print("\nGuess any letter: ");
             String guess = input.next();
             checkGuess(guess);
         }
 
-        System.out.println("\nToo bad! You ran out of lives! The word was " + wordToGuess + ".");
+        if (count == 0)
+        {
+            System.out.println("\nToo bad! You ran out of lives! The word was " + wordToGuess.toUpperCase() + ".\n");
+        }
 
         input.close();
     }
@@ -62,7 +65,7 @@ public class App {
 
         if (hiddenWord.equals(wordToGuess))
         {
-            System.out.println("\nCorrect! You Win! The word was " + wordToGuess);
+            System.out.println("\nCorrect! You Win! The word was " + wordToGuess.toUpperCase() + "!");
         }
     }
 }
