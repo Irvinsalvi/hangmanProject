@@ -65,7 +65,7 @@ public class App {
 
         if (hiddenWord.equals(wordToGuess))
         {
-            System.out.println("\nCorrect! You Win! The word was " + wordToGuess.toUpperCase() + "!");
+            System.out.println("\nCorrect! You Win! The word was " + wordToGuess.toUpperCase() + "!\n");
         }
     }
 }
